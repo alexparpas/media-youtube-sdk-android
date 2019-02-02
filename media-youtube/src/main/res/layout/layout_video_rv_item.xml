@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="180dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:layout_marginEnd="4dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/thumbnail_iv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintDimensionRatio="320:180"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/video_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/thumbnail_iv"
+        app:layout_constraintTop_toBottomOf="@id/thumbnail_iv"
+        tools:text="Video title sample" />
+
+    <TextView
+        android:id="@+id/channel_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:lines="1"
+        app:layout_constraintTop_toBottomOf="@id/video_title_tv"
+        tools:text="Video channel sample" />
+</androidx.constraintlayout.widget.ConstraintLayout>

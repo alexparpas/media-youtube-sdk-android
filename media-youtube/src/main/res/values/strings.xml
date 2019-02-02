@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Library</string>
+
+    <string name="youtube_api_base_url" translatable="false">https://www.googleapis.com/youtube/</string>
+</resources>
