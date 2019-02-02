@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">media-youtube-core</string>
+
+    <string name="youtube_api_base_url" translatable="false">https://www.googleapis.com/youtube/</string>
+</resources>

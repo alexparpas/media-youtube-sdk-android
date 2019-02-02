@@ -1,1 +1,1 @@
-include ':app', ':media-youtube'
+include ':app', ':media-youtube-ui', ':media-youtube-core'
