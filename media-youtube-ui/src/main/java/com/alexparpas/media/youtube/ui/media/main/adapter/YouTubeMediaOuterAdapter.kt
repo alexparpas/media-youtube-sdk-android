@@ -57,9 +57,9 @@ class YouTubeMediaOuterAdapter(private val callback: YouTubeMediaVideosAdapter.C
 
 class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(categoryItem: CategoryItem, callback: YouTubeMediaVideosAdapter.Callback) {
+        itemView.setOnClickListener { callback.onCategoryClicked(categoryItem) }
         itemView.category_tv.apply {
             text = categoryItem.categoryName
-            setOnClickListener { callback.onCategoryClicked(categoryItem) }
         }
     }
 }

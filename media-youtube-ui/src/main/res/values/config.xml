@@ -29,20 +29,25 @@
     </style>
 
     <style name="BaseCategoryTvStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">center</item>
         <item name="android:ellipsize">end</item>
         <item name="android:lines">1</item>
-        <item name="android:paddingBottom">8dp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@drawable/myt_text_color</item>
+    </style>
+
+    <style name="BaseSeeAllTvStyle">
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@drawable/myt_text_color</item>
+        <item name="android:text">@string/myt_category_more</item>
 
     </style>
 
     <style name="MytCategoryTvStyle" parent="BaseCategoryTvStyle" />
+
+    <style name="MytSeeAllTvStyle" parent="BaseSeeAllTvStyle" />
 
     <style name="MytThumbnailIvStyle" parent="BaseThumbnailIvStyle" />
 

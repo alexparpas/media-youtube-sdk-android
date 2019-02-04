@@ -13,7 +13,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 object MediaYouTubeUi {
-    internal const val ARG_SECTIONS = "ARG_SECTIONS
+    internal const val ARG_SECTIONS = "ARG_SECTIONS"
     internal const val ARG_VIDEO_ID = "ARG_VIDEO_ID"
 
     fun getMainMediaFragment(sections: ArrayList<VideoSection>): Fragment =

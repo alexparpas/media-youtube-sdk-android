@@ -19,17 +19,20 @@
     <TextView
         android:id="@+id/video_title_tv"
         style="@style/MytTitleTvStyle"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/thumbnail_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/thumbnail_iv"
-        tools:text="Video title sample" />
+        tools:text="Very very very long video title sample" />
 
     <TextView
         android:id="@+id/channel_name_tv"
         style="@style/MytSubtitleTvStyle"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/video_title_tv"
-        tools:text="Video channel sample" />
+        tools:text="Video channel very long name sample" />
 </androidx.constraintlayout.widget.ConstraintLayout>
