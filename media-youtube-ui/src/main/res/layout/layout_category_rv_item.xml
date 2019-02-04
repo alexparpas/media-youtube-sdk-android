@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:paddingBottom="8dp"
+    android:paddingEnd="16dp"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp">
 
     <TextView
         android:id="@+id/see_all_tv"
@@ -18,7 +21,6 @@
         style="@style/MytCategoryTvStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toStartOf="@id/see_all_tv"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="Category" />

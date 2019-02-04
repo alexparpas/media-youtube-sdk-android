@@ -1,6 +1,11 @@
 package com.alexparpas.media.youtube.core
 
+import android.annotation.SuppressLint
 import com.google.gson.annotations.SerializedName
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.time.Duration
+import java.util.*
 
 data class VideoResponse(
         val id: String,
@@ -81,15 +86,22 @@ data class VideoBinding(
 )
 
 fun VideoItem.toBinding(): VideoBinding {
+    SimpleDateFormat("HH:mm:ssZ", Locale.UK).format(Date())
+
     return VideoBinding(
             id = id,
             title = snippet.title,
             channelTitle = snippet.channelTitle,
             thumbnailUrl = snippet.thumbnails.medium.url,
             likeCount = statistics.likeCount,
-            viewCount = statistics.viewCount,
+            viewCount = "${statistics.viewCount} views",
             dislikeCount = statistics.dislikeCount,
             commentCount = statistics.commentCount,
-            duration = contentDetails.duration
+            duration = contentDetails.duration.toDuration()
     )
+}
+
+@SuppressLint("SimpleDateFormat")
+fun String.toDuration(): String {
+    return "" //TODO Implement
 }

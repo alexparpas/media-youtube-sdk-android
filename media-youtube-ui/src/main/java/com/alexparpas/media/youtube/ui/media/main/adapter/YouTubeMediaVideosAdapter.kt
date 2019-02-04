@@ -37,10 +37,11 @@ class YouTubeMediaVideosAdapter(private val callback: Callback) : RecyclerView.A
 
 class YoutubeMediaVideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(item: VideoBinding, callback: YouTubeMediaVideosAdapter.Callback) {
-        itemView.setOnClickListener { callback.onVideoClicked(item.id) }
-
-        itemView.channel_name_tv.text = item.channelTitle
-        itemView.video_title_tv.text = item.title
         Picasso.get().load(item.thumbnailUrl).into(itemView.thumbnail_iv)
+        itemView.video_title_tv.text = item.title
+        itemView.channel_name_tv.text = item.channelTitle
+        itemView.views_tv.text = item.viewCount
+        itemView.duration_tv.text = item.duration
+        itemView.setOnClickListener { callback.onVideoClicked(item.id) }
     }
 }

@@ -10,8 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alexparpas.media.youtube.ui.MediaYouTubeUi
 import com.alexparpas.media.youtube.R
-import com.alexparpas.media.youtube.core.CategoryItem
-import com.alexparpas.media.youtube.core.VideoSection
+import com.alexparpas.media.youtube.core.*
 import com.alexparpas.media.youtube.ui.media.main.adapter.YouTubeMediaOuterAdapter
 import com.alexparpas.media.youtube.ui.media.main.adapter.YouTubeMediaVideosAdapter
 import com.alexparpas.media.youtube.ui.media.more.YouTubeMoreMediaFragment
@@ -36,6 +35,7 @@ class YouTubeMainMediaFragment : Fragment(), YouTubeMediaVideosAdapter.Callback 
         initRecyclerView(adapter)
 
         observeVideos(adapter)
+        observeViewState()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -64,6 +64,34 @@ class YouTubeMainMediaFragment : Fragment(), YouTubeMediaVideosAdapter.Callback 
                 adapter.videos = videos
             }
         })
+    }
+
+    private fun observeViewState() {
+        viewModel.viewState.observe(viewLifecycleOwner, Observer {
+            when (it) {
+                LoadingState -> setLoadingState()
+                NormalState -> setNormalState()
+                is ErrorState -> setErrorState()
+            }
+        })
+    }
+
+    private fun setErrorState() {
+        recycler_view.visibility = View.GONE
+        loading_pb.visibility = View.GONE
+        error_tv.visibility = View.VISIBLE
+    }
+
+    private fun setNormalState() {
+        recycler_view.visibility = View.VISIBLE
+        loading_pb.visibility = View.GONE
+        error_tv.visibility = View.GONE
+    }
+
+    private fun setLoadingState() {
+        recycler_view.visibility = View.GONE
+        loading_pb.visibility = View.VISIBLE
+        error_tv.visibility = View.GONE
     }
 
     override fun onVideoClicked(videoId: String) {

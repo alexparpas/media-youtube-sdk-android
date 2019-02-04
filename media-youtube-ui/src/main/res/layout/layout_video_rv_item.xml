@@ -17,22 +17,41 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/duration_tv"
+        style="@style/BaseDurationTvStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="0:69"
+        app:layout_constraintBottom_toBottomOf="@id/thumbnail_iv"
+        app:layout_constraintEnd_toEndOf="@id/thumbnail_iv" />
+
+    <TextView
         android:id="@+id/video_title_tv"
         style="@style/MytTitleTvStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/thumbnail_iv"
         tools:text="Very very very long video title sample" />
 
     <TextView
         android:id="@+id/channel_name_tv"
-        style="@style/MytSubtitleTvStyle"
+        style="@style/MytChannelTvStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/video_title_tv"
         tools:text="Video channel very long name sample" />
+
+    <TextView
+        android:id="@+id/views_tv"
+        style="@style/MytViewsTvStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_name_tv"
+        tools:text="69k views" />
 </androidx.constraintlayout.widget.ConstraintLayout>

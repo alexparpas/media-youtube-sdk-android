@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="myt_background_colour">#181B1B</drawable>
+    <drawable name="myt_default_text_color">#FFFFFF</drawable>
+    <string name="myt_category_more">See All</string>
+
+    <style name="MytCategoryTvStyle" parent="BaseCategoryTvStyle">
+        <item name="fontFamily">@font/mk_serif</item>
+        <item name="android:textColor">#FD9A0A</item>
+    </style>
+
+    <style name="MytSeeAllTvStyle" parent="BaseSeeAllTvStyle">
+        <item name="fontFamily">@font/roboto_condensed_bold</item>
+        <item name="android:textColor">#797B7B</item>
+    </style>
+
+    <style name="MytTitleTvStyle" parent="BaseTitleTvStyle">
+        <item name="fontFamily">@font/roboto_condensed_regular</item>
+    </style>
+
+    <style name="MytChannelTvStyle" parent="BaseChannelTvStyle">
+        <item name="fontFamily">@font/roboto_condensed_regular</item>
+        <item name="android:textColor">#797B7B</item>
+    </style>
+
+    <style name="MytViewsTvStyle" parent="BaseViewsTvStyle">
+        <item name="fontFamily">@font/roboto_condensed_regular</item>
+        <item name="android:textColor">#797B7B</item>
+    </style>
+</resources>

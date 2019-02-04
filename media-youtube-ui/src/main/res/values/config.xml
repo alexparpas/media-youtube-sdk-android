@@ -2,30 +2,43 @@
 <resources>
 
     <drawable name="myt_background_colour">#FFFFFF</drawable>
-    <drawable name="myt_text_color">#000000</drawable>
+    <drawable name="myt_default_text_color">#000000</drawable>
+    <string name="myt_category_more">See All</string>
+    <string name="myt_error_generic">Could not load videos</string>
 
     <style name="BaseThumbnailIvStyle">
         <item name="android:layout_width">180dp</item>
         <item name="android:adjustViewBounds">true</item>
     </style>
 
+    <style name="BaseDurationTvStyle">
+        <item name="android:background">#000000</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
     <style name="BaseTitleTvStyle">
         <item name="android:layout_gravity">center</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:lines">1</item>
-        <item name="android:textAllCaps">true</item>
+        <item name="android:lines">2</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginTop">4dp</item>
-        <item name="android:textColor">@drawable/myt_text_color</item>
+        <item name="android:textColor">@drawable/myt_default_text_color</item>
 
     </style>
 
-    <style name="BaseSubtitleTvStyle">
+    <style name="BaseChannelTvStyle">
         <item name="android:layout_gravity">center</item>
         <item name="android:ellipsize">end</item>
         <item name="android:lines">1</item>
-        <item name="android:textColor">@drawable/myt_text_color</item>
+        <item name="android:textColor">@drawable/myt_default_text_color</item>
+    </style>
 
+    <style name="BaseViewsTvStyle">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:textColor">@drawable/myt_default_text_color</item>
     </style>
 
     <style name="BaseCategoryTvStyle">
@@ -33,14 +46,13 @@
         <item name="android:lines">1</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@drawable/myt_text_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@drawable/myt_default_text_color</item>
     </style>
 
     <style name="BaseSeeAllTvStyle">
-        <item name="android:textStyle">italic</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@drawable/myt_text_color</item>
+        <item name="android:textColor">@drawable/myt_default_text_color</item>
         <item name="android:text">@string/myt_category_more</item>
 
     </style>
@@ -51,7 +63,11 @@
 
     <style name="MytThumbnailIvStyle" parent="BaseThumbnailIvStyle" />
 
+    <style name="MytDurationTvStyle" parent="BaseDurationTvStyle" />
+
     <style name="MytTitleTvStyle" parent="BaseTitleTvStyle" />
 
-    <style name="MytSubtitleTvStyle" parent="BaseSubtitleTvStyle" />
+    <style name="MytChannelTvStyle" parent="BaseChannelTvStyle" />
+
+    <style name="MytViewsTvStyle" parent="BaseViewsTvStyle" />
 </resources>

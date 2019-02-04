@@ -4,10 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.alexparpas.media.youtube.core.MediaItem
-import com.alexparpas.media.youtube.core.VideoSection
-import com.alexparpas.media.youtube.core.YouTubeMediaRepository
-import com.alexparpas.media.youtube.core.toMediaBindingItem
+import com.alexparpas.media.youtube.core.*
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -23,6 +20,8 @@ class YouTubeMainMediaViewModel(
     private val disposables = CompositeDisposable()
     private val _mediaLiveData = MutableLiveData<List<MediaItem>>()
     val mediaLiveData: LiveData<List<MediaItem>> = _mediaLiveData
+    private val _viewState = MutableLiveData<ViewState>()
+    val viewState: LiveData<ViewState> = _viewState
 
     init {
         getVideos(sections)
@@ -33,6 +32,9 @@ class YouTubeMainMediaViewModel(
                 .flatMap {
                     repository.getVideos(it).subscribeOn(ioScheduler)
                 }.map { videos -> sections.map { it.toMediaBindingItem(videos) }.flatten() } //Transform to media binding item list
+                .doOnSubscribe { _viewState.postValue(LoadingState) }
+                .doOnError { _viewState.postValue(ErrorState(it)) }
+                .doOnSuccess { _viewState.postValue(NormalState) }
                 .subscribeOn(ioScheduler)
                 .observeOn(uiScheduler)
                 .subscribeBy(
