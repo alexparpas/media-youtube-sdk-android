@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public name="myt_background_colour" type="style" />
+    <public name="myt_text_colour" type="style" />
+
+    <public name="MytCategoryTvStyle" type="style" />
+    <public name="MytThumbnailIvStyle" type="style" />
+    <public name="MytTitleTvStyle" type="style" />
+    <public name="MytSubtitleTvStyle" type="style" />
+
+</resources>

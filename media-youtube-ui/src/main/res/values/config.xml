@@ -1,8 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <font name="font_regular"/>
-    <font name="font_bold"/>
-    <font name="font_title"/>
+    <drawable name="myt_background_colour">#FFFFFF</drawable>
+    <drawable name="myt_text_color">#000000</drawable>
 
+    <style name="BaseThumbnailIvStyle">
+        <item name="android:layout_width">180dp</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="BaseTitleTvStyle">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textColor">@drawable/myt_text_color</item>
+
+    </style>
+
+    <style name="BaseSubtitleTvStyle">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:textColor">@drawable/myt_text_color</item>
+
+    </style>
+
+    <style name="BaseCategoryTvStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@drawable/myt_text_color</item>
+
+    </style>
+
+    <style name="MytCategoryTvStyle" parent="BaseCategoryTvStyle" />
+
+    <style name="MytThumbnailIvStyle" parent="BaseThumbnailIvStyle" />
+
+    <style name="MytTitleTvStyle" parent="BaseTitleTvStyle" />
+
+    <style name="MytSubtitleTvStyle" parent="BaseSubtitleTvStyle" />
 </resources>

@@ -4,19 +4,13 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/myt_background_colour"
     android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/category_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ellipsize="end"
-        android:lines="1"
-        android:paddingBottom="8dp"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        style="@style/MytCategoryTvStyle"
         tools:text="Category" />
 
     <androidx.recyclerview.widget.RecyclerView
