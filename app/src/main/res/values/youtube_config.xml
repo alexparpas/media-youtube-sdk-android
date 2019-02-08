@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <drawable name="myt_background_colour">#181B1B</drawable>
+    <drawable name="myt_main_background">#181B1B</drawable>
+    <drawable name="myt_more_background">#181B1B</drawable>
     <drawable name="myt_default_text_color">#FFFFFF</drawable>
     <string name="myt_category_more">See All</string>
 
