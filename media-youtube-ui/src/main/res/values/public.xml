@@ -8,6 +8,7 @@
 
     <public name="MytCategoryTvStyle" type="style" />
     <public name="MytThumbnailIvStyle" type="style" />
+    <public name="MytDurationTvStyle" type="style" />
     <public name="MytTitleTvStyle" type="style" />
     <public name="MytChannelTvStyle" type="style" />
     <public name="MytViewsTvStyle" type="style" />
