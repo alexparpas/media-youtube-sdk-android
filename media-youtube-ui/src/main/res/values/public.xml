@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <public name="myt_background_colour" type="drawable" />
+    <public name="myt_main_background" type="drawable" />
+    <public name="myt_more_background" type="drawable" />
     <public name="myt_default_text_colour" type="color" />
     <public name="myt_category_more" type="string" />
     <public name="myt_error_generic" type="string" />
@@ -10,5 +11,6 @@
     <public name="MytTitleTvStyle" type="style" />
     <public name="MytChannelTvStyle" type="style" />
     <public name="MytViewsTvStyle" type="style" />
+    <public name="MytSeeAllTvStyle" type="style" />
 
 </resources>

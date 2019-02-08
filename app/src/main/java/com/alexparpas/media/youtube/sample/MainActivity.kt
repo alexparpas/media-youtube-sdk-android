@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getSections() = arrayListOf(
+            VideoSection(categoryName = "MK11", videoIds = listOf("iZqZvHf_TsA", "CShq7wrgM5M", "BLUpVgaBNn8")),
+            VideoSection(categoryName = "Learn", videoIds = listOf("NPBHbj317ro", "Vm7eg_KkAnA", "5-640npgS-w")),
             VideoSection(categoryName = "JINAMOUNAINAI", videoIds = listOf("uBtgRI6kC6w", "2R0l4m5t0Xk", "mgJu5QxKaKo", "uf6HEhnw93U", "EfDQ5fVeY9c", "vv0_jD9BZJA")),
             VideoSection(categoryName = "Man0_GRC", videoIds = listOf("0Tm8csb4O00", "9_PJWfrBiYU", "RqArBLi-aac")),
-            VideoSection(categoryName = "BornThroughAshes", videoIds = listOf("tJDyg5rnYBs", "2S8hz0t7g6A", "HwnKvSyjECM", "INRtm2xLo9Q")),
-            VideoSection(categoryName = "MK11", videoIds = listOf("iZqZvHf_TsA", "CShq7wrgM5M", "BLUpVgaBNn8")),
-            VideoSection(categoryName = "Learn", videoIds = listOf("NPBHbj317ro", "Vm7eg_KkAnA", "5-640npgS-w"))
+            VideoSection(categoryName = "BornThroughAshes", videoIds = listOf("tJDyg5rnYBs", "2S8hz0t7g6A", "HwnKvSyjECM", "INRtm2xLo9Q"))
     )
 }

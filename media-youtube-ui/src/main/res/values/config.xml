@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <drawable name="myt_background_colour">#FFFFFF</drawable>
-    <drawable name="myt_default_text_color">#000000</drawable>
+    <drawable name="myt_main_background_colour">#FFFFFF</drawable>
+    <drawable name="myt_more_background_colour">#FFFFFF</drawable>
+    <color name="myt_default_text_color">#000000</color>
     <string name="myt_category_more">See All</string>
     <string name="myt_error_generic">Could not load videos</string>
 
@@ -23,7 +24,7 @@
         <item name="android:lines">2</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginTop">4dp</item>
-        <item name="android:textColor">@drawable/myt_default_text_color</item>
+        <item name="android:textColor">@color/myt_default_text_color</item>
 
     </style>
 
@@ -31,14 +32,14 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:ellipsize">end</item>
         <item name="android:lines">1</item>
-        <item name="android:textColor">@drawable/myt_default_text_color</item>
+        <item name="android:textColor">@color/myt_default_text_color</item>
     </style>
 
     <style name="BaseViewsTvStyle">
         <item name="android:layout_gravity">center</item>
         <item name="android:ellipsize">end</item>
         <item name="android:lines">1</item>
-        <item name="android:textColor">@drawable/myt_default_text_color</item>
+        <item name="android:textColor">@color/myt_default_text_color</item>
     </style>
 
     <style name="BaseCategoryTvStyle">
@@ -47,12 +48,12 @@
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@drawable/myt_default_text_color</item>
+        <item name="android:textColor">@color/myt_default_text_color</item>
     </style>
 
     <style name="BaseSeeAllTvStyle">
         <item name="android:textSize">14sp</item>
-        <item name="android:textColor">@drawable/myt_default_text_color</item>
+        <item name="android:textColor">@color/myt_default_text_color</item>
         <item name="android:text">@string/myt_category_more</item>
 
     </style>
