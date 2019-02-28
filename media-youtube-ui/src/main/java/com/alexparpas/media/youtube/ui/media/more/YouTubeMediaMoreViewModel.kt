@@ -12,7 +12,7 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import timber.log.Timber
 
-class YouTubeMoreViewModel(
+class YouTubeMediaMoreViewModel(
         private val categoryName: String,
         private val videoIds: List<String>,
         private val ioScheduler: Scheduler,
@@ -55,7 +55,7 @@ class YouTubeMoreViewModelFactory(
         private val repository: YouTubeMediaRepository
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return YouTubeMoreViewModel(
+        return YouTubeMediaMoreViewModel(
                 categoryName,
                 videoIds,
                 ioScheduler,

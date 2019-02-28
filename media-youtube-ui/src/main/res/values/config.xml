@@ -41,7 +41,7 @@
         <item name="android:textColor">@color/myt_default_text_color</item>
     </style>
 
-    <style name="BaseCategoryTvStyle">
+    <style name="BaseCategoryTitleTvStyle">
         <item name="android:ellipsize">end</item>
         <item name="android:lines">1</item>
         <item name="android:textAllCaps">true</item>
@@ -50,14 +50,21 @@
         <item name="android:textColor">@color/myt_default_text_color</item>
     </style>
 
+    <style name="BaseCategoryDescriptionTvStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/myt_default_text_color</item>
+        <item name="android:text">@string/myt_category_more</item>
+    </style>
+
     <style name="BaseSeeAllTvStyle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/myt_default_text_color</item>
         <item name="android:text">@string/myt_category_more</item>
-
     </style>
 
-    <style name="MytCategoryTvStyle" parent="BaseCategoryTvStyle" />
+    <style name="MytCategoryTitleTvStyle" parent="BaseCategoryTitleTvStyle" />
+
+    <style name="MytCategoryDescriptionTvStyle" parent="BaseCategoryDescriptionTvStyle" />
 
     <style name="MytThumbnailIvStyle" parent="BaseThumbnailIvStyle" />
 

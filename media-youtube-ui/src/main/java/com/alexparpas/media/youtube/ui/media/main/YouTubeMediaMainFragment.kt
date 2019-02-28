@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.alexparpas.media.youtube.ui.MediaYouTubeUi
 import com.alexparpas.media.youtube.R
 import com.alexparpas.media.youtube.core.*
-import com.alexparpas.media.youtube.ui.media.main.adapter.YouTubeMediaOuterAdapter
-import com.alexparpas.media.youtube.ui.media.main.adapter.YouTubeMediaVideosAdapter
-import com.alexparpas.media.youtube.ui.media.more.YouTubeMoreMediaFragment
+import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaOuterAdapter
+import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaVideosAdapter
+import com.alexparpas.media.youtube.ui.media.more.YouTubeMediaMoreFragment
 import kotlinx.android.synthetic.main.fragment_youtube_media.*
 
-class YouTubeMainMediaFragment : Fragment(), YouTubeMediaVideosAdapter.Callback {
+class YouTubeMediaMainFragment : Fragment(), YouTubeMediaVideosAdapter.Callback {
 
-    private lateinit var viewModel: YouTubeMainMediaViewModel
+    private lateinit var viewModel: YouTubeMediaMainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +48,7 @@ class YouTubeMainMediaFragment : Fragment(), YouTubeMediaVideosAdapter.Callback 
                 MediaYouTubeUi.Injection.provideMediaViewModelFactory(
                         sections = requireNotNull(arguments?.getParcelableArrayList(MediaYouTubeUi.ARG_SECTIONS))
                 )
-        ).get(YouTubeMainMediaViewModel::class.java)
+        ).get(YouTubeMediaMainViewModel::class.java)
     }
 
     private fun initRecyclerView(adapter: YouTubeMediaOuterAdapter) {
@@ -99,15 +99,15 @@ class YouTubeMainMediaFragment : Fragment(), YouTubeMediaVideosAdapter.Callback 
     }
 
     override fun onCategoryClicked(category: CategoryItem) {
-        YouTubeMoreMediaFragment.newInstance(
-                category.categoryName,
+        YouTubeMediaMoreFragment.newInstance(
+                category.title,
                 ArrayList(category.videoIds)
         ).show(childFragmentManager, "frag")
     }
 
     companion object {
-        fun newInstance(sections: ArrayList<VideoSection>): YouTubeMainMediaFragment {
-            return YouTubeMainMediaFragment().apply {
+        fun newInstance(sections: ArrayList<VideoSection>): YouTubeMediaMainFragment {
+            return YouTubeMediaMainFragment().apply {
                 arguments = Bundle().apply {
                     putParcelableArrayList(MediaYouTubeUi.ARG_SECTIONS, sections)
                 }

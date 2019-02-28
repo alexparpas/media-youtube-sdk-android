@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.alexparpas.media.youtube.ui.MediaYouTubeUi
 import com.alexparpas.media.youtube.R
 import com.alexparpas.media.youtube.core.CategoryItem
-import com.alexparpas.media.youtube.ui.media.main.adapter.YouTubeMediaVideosAdapter
+import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaVideosAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.fragment_youtube_more_media.*
 
-class YouTubeMoreMediaFragment : BottomSheetDialogFragment(), YouTubeMediaVideosAdapter.Callback {
-    private lateinit var viewModel: YouTubeMoreViewModel
+class YouTubeMediaMoreFragment : BottomSheetDialogFragment(), YouTubeMediaVideosAdapter.Callback {
+    private lateinit var viewModel: YouTubeMediaMoreViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +46,7 @@ class YouTubeMoreMediaFragment : BottomSheetDialogFragment(), YouTubeMediaVideos
                         videoIds = requireNotNull(arguments?.getStringArrayList(ARG_VIDEO_IDS)),
                         categoryName = requireNotNull(arguments?.getString(ARG_CATEGORY_NAME))
                 )
-        ).get(YouTubeMoreViewModel::class.java)
+        ).get(YouTubeMediaMoreViewModel::class.java)
     }
 
     private fun initRecyclerView(adapter: YouTubeMediaVideosAdapter) {
@@ -80,7 +80,7 @@ class YouTubeMoreMediaFragment : BottomSheetDialogFragment(), YouTubeMediaVideos
         private const val ARG_VIDEO_IDS = "ARG_VIDEO_IDS"
         private const val ARG_CATEGORY_NAME = "ARG_CATEGORY_NAME"
 
-        fun newInstance(categoryName: String, videoIds: ArrayList<String>) = YouTubeMoreMediaFragment().apply {
+        fun newInstance(categoryName: String, videoIds: ArrayList<String>) = YouTubeMediaMoreFragment().apply {
             arguments = Bundle().apply {
                 putStringArrayList(ARG_VIDEO_IDS, videoIds)
                 putString(ARG_CATEGORY_NAME, categoryName)

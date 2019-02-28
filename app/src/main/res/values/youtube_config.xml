@@ -5,7 +5,7 @@
     <drawable name="myt_default_text_color">#FFFFFF</drawable>
     <string name="myt_category_more">See All</string>
 
-    <style name="MytCategoryTvStyle" parent="BaseCategoryTvStyle">
+    <style name="MytCategoryTvStyle" parent="BaseCategoryTitleTvStyle">
         <item name="fontFamily">@font/mk_serif</item>
         <item name="android:textColor">#FD9A0A</item>
     </style>

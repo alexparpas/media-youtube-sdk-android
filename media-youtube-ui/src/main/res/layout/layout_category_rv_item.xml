@@ -4,24 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="8dp"
-    android:paddingEnd="16dp"
     android:paddingStart="16dp"
-    android:paddingTop="16dp">
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="8dp">
 
     <TextView
         android:id="@+id/see_all_tv"
         style="@style/MytSeeAllTvStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/category_tv"
-        style="@style/MytCategoryTvStyle"
+        style="@style/MytCategoryTitleTvStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/see_all_tv"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Category" />
+
+    <TextView
+        android:id="@+id/description_tv"
+        style="@style/MytCategoryDescriptionTvStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/category_tv"
+        app:layout_constraintEnd_toStartOf="@id/see_all_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="This is a description mate" />
 </androidx.constraintlayout.widget.ConstraintLayout>

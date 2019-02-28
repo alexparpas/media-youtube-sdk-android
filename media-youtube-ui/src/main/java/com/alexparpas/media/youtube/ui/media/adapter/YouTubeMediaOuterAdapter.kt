@@ -1,4 +1,4 @@
-package com.alexparpas.media.youtube.ui.media.main.adapter
+package com.alexparpas.media.youtube.ui.media.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -58,9 +58,8 @@ class YouTubeMediaOuterAdapter(private val callback: YouTubeMediaVideosAdapter.C
 class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(categoryItem: CategoryItem, callback: YouTubeMediaVideosAdapter.Callback) {
         itemView.setOnClickListener { callback.onCategoryClicked(categoryItem) }
-        itemView.category_tv.apply {
-            text = categoryItem.categoryName
-        }
+        itemView.category_tv.text = categoryItem.title
+        itemView.description_tv.text = categoryItem.description
     }
 }
 
