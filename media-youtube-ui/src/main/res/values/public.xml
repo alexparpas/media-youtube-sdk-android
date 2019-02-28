@@ -6,7 +6,8 @@
     <public name="myt_category_more" type="string" />
     <public name="myt_error_generic" type="string" />
 
-    <public name="MytCategoryTvStyle" type="style" />
+    <public name="MytCategoryTitleTvStyle" type="style" />
+    <public name="MytCategoryDescriptionTvStyle" type="style" />
     <public name="MytThumbnailIvStyle" type="style" />
     <public name="MytDurationTvStyle" type="style" />
     <public name="MytTitleTvStyle" type="style" />
