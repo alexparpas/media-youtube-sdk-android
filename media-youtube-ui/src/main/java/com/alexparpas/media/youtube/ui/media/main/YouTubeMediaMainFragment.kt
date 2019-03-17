@@ -14,7 +14,7 @@ import com.alexparpas.media.youtube.core.*
 import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaOuterAdapter
 import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaVideosAdapter
 import com.alexparpas.media.youtube.ui.media.more.YouTubeMediaMoreFragment
-import kotlinx.android.synthetic.main.fragment_youtube_media.*
+import kotlinx.android.synthetic.main.myt_fragment_youtube_media.*
 
 class YouTubeMediaMainFragment : Fragment(), YouTubeMediaVideosAdapter.Callback {
 
@@ -26,7 +26,7 @@ class YouTubeMediaMainFragment : Fragment(), YouTubeMediaVideosAdapter.Callback 
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-            inflater.inflate(R.layout.fragment_youtube_media, container, false)
+            inflater.inflate(R.layout.myt_fragment_youtube_media, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -8,7 +8,7 @@ import com.alexparpas.media.youtube.R
 import com.alexparpas.media.youtube.core.CategoryItem
 import com.alexparpas.media.youtube.core.VideoBinding
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.layout_video_rv_item.view.*
+import kotlinx.android.synthetic.main.myt_layout_video_rv_item.view.*
 
 class YouTubeMediaVideosAdapter(private val callback: Callback) : RecyclerView.Adapter<YoutubeMediaVideosViewHolder>() {
     var videos: List<VideoBinding> = mutableListOf()
@@ -19,7 +19,7 @@ class YouTubeMediaVideosAdapter(private val callback: Callback) : RecyclerView.A
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): YoutubeMediaVideosViewHolder {
         return YoutubeMediaVideosViewHolder(LayoutInflater.from(parent.context)
-                .inflate(R.layout.layout_video_rv_item, parent, false))
+                .inflate(R.layout.myt_layout_video_rv_item, parent, false))
     }
 
     override fun getItemCount(): Int = videos.size

@@ -7,12 +7,12 @@ import com.alexparpas.media.youtube.ui.MediaYouTubeUi
 import com.alexparpas.media.youtube.R
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.player.listeners.YouTubePlayerFullScreenListener
-import kotlinx.android.synthetic.main.activity_video.*
+import kotlinx.android.synthetic.main.myt_activity_video.*
 
 class VideoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_video)
+        setContentView(R.layout.myt_activity_video)
 
         val videoId = intent.getStringExtra(MediaYouTubeUi.ARG_VIDEO_ID)
         lifecycle.addObserver(youtube_player_view)

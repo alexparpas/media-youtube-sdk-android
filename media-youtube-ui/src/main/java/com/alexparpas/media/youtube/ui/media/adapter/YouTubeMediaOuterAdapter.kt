@@ -10,8 +10,8 @@ import com.alexparpas.media.youtube.core.CategoryItem
 import com.alexparpas.media.youtube.core.MediaItem
 import com.alexparpas.media.youtube.core.VideoBinding
 import com.alexparpas.media.youtube.core.VideosItem
-import kotlinx.android.synthetic.main.layout_category_rv_item.view.*
-import kotlinx.android.synthetic.main.layout_videos_rv_item.view.*
+import kotlinx.android.synthetic.main.myt_layout_category_rv_item.view.*
+import kotlinx.android.synthetic.main.myt_layout_videos_rv_item.view.*
 
 class YouTubeMediaOuterAdapter(private val callback: YouTubeMediaVideosAdapter.Callback) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var videos: List<MediaItem> = mutableListOf()
@@ -23,10 +23,10 @@ class YouTubeMediaOuterAdapter(private val callback: YouTubeMediaVideosAdapter.C
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == TYPE_CATEGORY) {
             CategoryViewHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.layout_category_rv_item, parent, false))
+                    .inflate(R.layout.myt_layout_category_rv_item, parent, false))
         } else {
             VideosViewHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.layout_videos_rv_item, parent, false))
+                    .inflate(R.layout.myt_layout_videos_rv_item, parent, false))
         }
     }
 

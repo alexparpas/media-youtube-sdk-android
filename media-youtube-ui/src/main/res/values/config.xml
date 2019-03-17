@@ -7,18 +7,18 @@
     <string name="myt_category_more">See All</string>
     <string name="myt_error_generic">Could not load videos</string>
 
-    <style name="BaseThumbnailIvStyle">
+    <style name="BaseYtThumbnailIvStyle">
         <item name="android:layout_width">180dp</item>
         <item name="android:adjustViewBounds">true</item>
     </style>
 
-    <style name="BaseDurationTvStyle">
+    <style name="BaseYtDurationTvStyle">
         <item name="android:background">#000000</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:padding">4dp</item>
     </style>
 
-    <style name="BaseTitleTvStyle">
+    <style name="BaseYtTitleTvStyle">
         <item name="android:layout_gravity">center</item>
         <item name="android:ellipsize">end</item>
         <item name="android:lines">2</item>
@@ -27,21 +27,21 @@
         <item name="android:textColor">@color/myt_default_text_color</item>
     </style>
 
-    <style name="BaseChannelTvStyle">
+    <style name="BaseYtChannelTvStyle">
         <item name="android:layout_gravity">center</item>
         <item name="android:ellipsize">end</item>
         <item name="android:lines">1</item>
         <item name="android:textColor">@color/myt_default_text_color</item>
     </style>
 
-    <style name="BaseViewsTvStyle">
+    <style name="BaseYtViewsTvStyle">
         <item name="android:layout_gravity">center</item>
         <item name="android:ellipsize">end</item>
         <item name="android:lines">1</item>
         <item name="android:textColor">@color/myt_default_text_color</item>
     </style>
 
-    <style name="BaseCategoryTitleTvStyle">
+    <style name="BaseYtCategoryTitleTvStyle">
         <item name="android:ellipsize">end</item>
         <item name="android:lines">1</item>
         <item name="android:textAllCaps">true</item>
@@ -50,31 +50,31 @@
         <item name="android:textColor">@color/myt_default_text_color</item>
     </style>
 
-    <style name="BaseCategoryDescriptionTvStyle">
+    <style name="BaseYtCategoryDescriptionTvStyle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/myt_default_text_color</item>
         <item name="android:text">@string/myt_category_more</item>
     </style>
 
-    <style name="BaseSeeAllTvStyle">
+    <style name="BaseYtSeeAllTvStyle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/myt_default_text_color</item>
         <item name="android:text">@string/myt_category_more</item>
     </style>
 
-    <style name="MytCategoryTitleTvStyle" parent="BaseCategoryTitleTvStyle" />
+    <style name="MytCategoryTitleTvStyle" parent="BaseYtCategoryTitleTvStyle" />
 
-    <style name="MytCategoryDescriptionTvStyle" parent="BaseCategoryDescriptionTvStyle" />
+    <style name="MytCategoryDescriptionTvStyle" parent="BaseYtCategoryDescriptionTvStyle" />
 
-    <style name="MytThumbnailIvStyle" parent="BaseThumbnailIvStyle" />
+    <style name="MytThumbnailIvStyle" parent="BaseYtThumbnailIvStyle" />
 
-    <style name="MytDurationTvStyle" parent="BaseDurationTvStyle" />
+    <style name="MytDurationTvStyle" parent="BaseYtDurationTvStyle" />
 
-    <style name="MytTitleTvStyle" parent="BaseTitleTvStyle" />
+    <style name="MytTitleTvStyle" parent="BaseYtTitleTvStyle" />
 
-    <style name="MytChannelTvStyle" parent="BaseChannelTvStyle" />
+    <style name="MytChannelTvStyle" parent="BaseYtChannelTvStyle" />
 
-    <style name="MytViewsTvStyle" parent="BaseViewsTvStyle" />
+    <style name="MytViewsTvStyle" parent="BaseYtViewsTvStyle" />
 
-    <style name="MytSeeAllTvStyle" parent="BaseSeeAllTvStyle" />
+    <style name="MytSeeAllTvStyle" parent="BaseYtSeeAllTvStyle" />
 </resources>

@@ -12,7 +12,7 @@ import com.alexparpas.media.youtube.R
 import com.alexparpas.media.youtube.core.CategoryItem
 import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaVideosAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.android.synthetic.main.fragment_youtube_more_media.*
+import kotlinx.android.synthetic.main.myt_fragment_youtube_more_media.*
 
 class YouTubeMediaMoreFragment : BottomSheetDialogFragment(), YouTubeMediaVideosAdapter.Callback {
     private lateinit var viewModel: YouTubeMediaMoreViewModel
@@ -23,7 +23,7 @@ class YouTubeMediaMoreFragment : BottomSheetDialogFragment(), YouTubeMediaVideos
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
-            inflater.inflate(R.layout.fragment_youtube_more_media, container, false)
+            inflater.inflate(R.layout.myt_fragment_youtube_more_media, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

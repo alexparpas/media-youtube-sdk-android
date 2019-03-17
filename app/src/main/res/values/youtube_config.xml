@@ -5,26 +5,26 @@
     <drawable name="myt_default_text_color">#FFFFFF</drawable>
     <string name="myt_category_more">See All</string>
 
-    <style name="MytCategoryTvStyle" parent="BaseCategoryTitleTvStyle">
+    <style name="MytCategoryTvStyle" parent="BaseYtCategoryTitleTvStyle">
         <item name="fontFamily">@font/mk_serif</item>
         <item name="android:textColor">#FD9A0A</item>
     </style>
 
-    <style name="MytSeeAllTvStyle" parent="BaseSeeAllTvStyle">
+    <style name="MytSeeAllTvStyle" parent="BaseYtSeeAllTvStyle">
         <item name="fontFamily">@font/roboto_condensed_bold</item>
         <item name="android:textColor">#797B7B</item>
     </style>
 
-    <style name="MytTitleTvStyle" parent="BaseTitleTvStyle">
+    <style name="MytTitleTvStyle" parent="BaseYtTitleTvStyle">
         <item name="fontFamily">@font/roboto_condensed_regular</item>
     </style>
 
-    <style name="MytChannelTvStyle" parent="BaseChannelTvStyle">
+    <style name="MytChannelTvStyle" parent="BaseYtChannelTvStyle">
         <item name="fontFamily">@font/roboto_condensed_regular</item>
         <item name="android:textColor">#797B7B</item>
     </style>
 
-    <style name="MytViewsTvStyle" parent="BaseViewsTvStyle">
+    <style name="MytViewsTvStyle" parent="BaseYtViewsTvStyle">
         <item name="fontFamily">@font/roboto_condensed_regular</item>
         <item name="android:textColor">#797B7B</item>
     </style>
