@@ -5,7 +5,8 @@ import io.reactivex.Single
 class YouTubeMediaRepository(
         private val apiKey: String,
         private val localStorage: LocalStorage,
-        private val service: YouTubeMediaService
+        private val service: YouTubeMediaService,
+        private val videoMapper: YouTubeVideoMapper
 ) {
 
     fun getVideoIds(sections: List<VideoSection>): Single<List<String>> =
@@ -14,19 +15,20 @@ class YouTubeMediaRepository(
                         it.map { section -> section.videoIds }.flatten()
                     }
 
-    fun getVideos(videoIds: List<String>): Single<List<VideoBinding>> {
-        return try {
-            getCachedVideos(videoIds)
-        } catch (e: Throwable) {
-            if (e is NotCachedException) {
+    fun getVideos(sections: List<VideoSection>, videoIds: List<String>): Single<List<MediaItem>> {
+        return getCachedVideos(videoIds).doOnError {
+            if (it is NotCachedException) {
                 getVideosRemote(videoIds)
             } else {
-                Single.error(e)
+                Single.error(it)
             }
+        }.map {
+            videoMapper.map(sections, it)
         }
     }
 
-    private fun getCachedVideos(videoIds: List<String>) = Single.just(localStorage.getVideos(videoIds))
+    private fun getCachedVideos(videoIds: List<String>): Single<List<VideoBinding>> =
+            Single.just(localStorage.getVideos(videoIds))
 
     private fun getVideosRemote(videoIds: List<String>): Single<List<VideoBinding>> {
         return service.getVideos(
@@ -34,10 +36,9 @@ class YouTubeMediaRepository(
                 part = "snippet,contentDetails,statistics",
                 ids = videoIds.joinToString(",")
         ).map { videoItems ->
-            videoItems.items.map { it.toBinding() }
+            videoMapper.map(videoItems)
         }.doOnSuccess {
             LocalStorage.cacheVideos(it)
         }
-
     }
 }

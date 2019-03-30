@@ -84,24 +84,3 @@ data class VideoBinding(
         val commentCount: String,
         val duration: String
 )
-
-fun VideoItem.toBinding(): VideoBinding {
-    SimpleDateFormat("HH:mm:ssZ", Locale.UK).format(Date())
-
-    return VideoBinding(
-            id = id,
-            title = snippet.title,
-            channelTitle = snippet.channelTitle,
-            thumbnailUrl = snippet.thumbnails.medium.url,
-            likeCount = statistics.likeCount,
-            viewCount = "${statistics.viewCount} views",
-            dislikeCount = statistics.dislikeCount,
-            commentCount = statistics.commentCount,
-            duration = contentDetails.duration.toDuration()
-    )
-}
-
-@SuppressLint("SimpleDateFormat")
-fun String.toDuration(): String {
-    return "" //TODO Implement
-}

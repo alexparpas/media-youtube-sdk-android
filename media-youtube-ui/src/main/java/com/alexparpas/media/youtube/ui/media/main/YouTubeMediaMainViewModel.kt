@@ -17,11 +17,13 @@ class YouTubeMediaMainViewModel(
         private val uiScheduler: Scheduler,
         private val repository: YouTubeMediaRepository
 ) : ViewModel() {
-    private val disposables = CompositeDisposable()
     private val _mediaLiveData = MutableLiveData<List<MediaItem>>()
     val mediaLiveData: LiveData<List<MediaItem>> = _mediaLiveData
+
     private val _viewState = MutableLiveData<ViewState>()
     val viewState: LiveData<ViewState> = _viewState
+
+    private val disposables = CompositeDisposable()
 
     init {
         getVideos(sections)
@@ -30,8 +32,8 @@ class YouTubeMediaMainViewModel(
     private fun getVideos(sections: List<VideoSection>) {
         repository.getVideoIds(sections)
                 .flatMap {
-                    repository.getVideos(it).subscribeOn(ioScheduler)
-                }.map { videos -> sections.map { it.toMediaBindingItem(videos) }.flatten() } //Transform to media binding item list
+                    repository.getVideos(sections, it).subscribeOn(ioScheduler)
+                }
                 .doOnSubscribe { _viewState.postValue(LoadingState) }
                 .doOnError { _viewState.postValue(ErrorState(it)) }
                 .doOnSuccess { _viewState.postValue(NormalState) }
