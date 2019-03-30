@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.fragment.app.Fragment
 import com.alexparpas.media.youtube.core.MediaYouTube
-import com.alexparpas.media.youtube.core.VideoSection
+import com.alexparpas.media.youtube.core.model.VideoSection
 import com.alexparpas.media.youtube.ui.media.main.YouTubeMediaMainFragment
 import com.alexparpas.media.youtube.ui.media.main.YouTubeMediaViewModelFactory
 import com.alexparpas.media.youtube.ui.media.more.YouTubeMoreViewModelFactory

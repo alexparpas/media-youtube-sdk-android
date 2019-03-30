@@ -3,7 +3,7 @@ package com.alexparpas.media.youtube.sample
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.alexparpas.media.youtube.core.MediaYouTube
-import com.alexparpas.media.youtube.core.VideoSection
+import com.alexparpas.media.youtube.core.model.VideoSection
 import com.alexparpas.media.youtube.ui.MediaYouTubeUi
 
 class MainActivity : AppCompatActivity() {

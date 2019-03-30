@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.alexparpas.media.youtube.core.VideoBinding
-import com.alexparpas.media.youtube.core.YouTubeMediaRepository
+import com.alexparpas.media.youtube.core.data.VideoItem
+import com.alexparpas.media.youtube.core.data.YouTubeMediaRepository
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
@@ -21,9 +21,9 @@ class YouTubeMediaMoreViewModel(
 ) : ViewModel() {
     private val disposables = CompositeDisposable()
 
-    private val _videosLiveData = MutableLiveData<List<VideoBinding>>()
+    private val _videosLiveData = MutableLiveData<List<VideoItem>>()
     val categoryNameLiveData = MutableLiveData<String>()
-    val videosLiveData: LiveData<List<VideoBinding>> = _videosLiveData
+    val videosLiveData: LiveData<List<VideoItem>> = _videosLiveData
 
     init {
         getVideos()

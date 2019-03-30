@@ -1,4 +1,4 @@
-package com.alexparpas.media.youtube.core
+package com.alexparpas.media.youtube.core.util
 
 import android.content.res.Resources
 

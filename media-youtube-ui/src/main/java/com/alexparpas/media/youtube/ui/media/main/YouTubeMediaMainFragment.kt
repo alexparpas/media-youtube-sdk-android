@@ -8,9 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.alexparpas.media.youtube.ui.MediaYouTubeUi
 import com.alexparpas.media.youtube.R
-import com.alexparpas.media.youtube.core.*
+import com.alexparpas.media.youtube.core.ErrorState
+import com.alexparpas.media.youtube.core.LoadingState
+import com.alexparpas.media.youtube.core.NormalState
+import com.alexparpas.media.youtube.core.data.CategoryItem
+import com.alexparpas.media.youtube.core.model.VideoSection
+import com.alexparpas.media.youtube.ui.MediaYouTubeUi
 import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaOuterAdapter
 import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaVideosAdapter
 import com.alexparpas.media.youtube.ui.media.more.YouTubeMediaMoreFragment

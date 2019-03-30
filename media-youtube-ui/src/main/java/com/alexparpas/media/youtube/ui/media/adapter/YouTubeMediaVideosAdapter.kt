@@ -5,13 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alexparpas.media.youtube.R
-import com.alexparpas.media.youtube.core.CategoryItem
-import com.alexparpas.media.youtube.core.VideoBinding
+import com.alexparpas.media.youtube.core.data.CategoryItem
+import com.alexparpas.media.youtube.core.data.VideoItem
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.myt_layout_video_rv_item.view.*
 
 class YouTubeMediaVideosAdapter(private val callback: Callback) : RecyclerView.Adapter<YoutubeMediaVideosViewHolder>() {
-    var videos: List<VideoBinding> = mutableListOf()
+    var videos: List<VideoItem> = mutableListOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -36,7 +36,7 @@ class YouTubeMediaVideosAdapter(private val callback: Callback) : RecyclerView.A
 }
 
 class YoutubeMediaVideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(item: VideoBinding, callback: YouTubeMediaVideosAdapter.Callback) {
+    fun bind(item: VideoItem, callback: YouTubeMediaVideosAdapter.Callback) {
         if (item.thumbnailUrl.isNotBlank()) {
             Picasso.get().load(item.thumbnailUrl).into(itemView.thumbnail_iv)
         }

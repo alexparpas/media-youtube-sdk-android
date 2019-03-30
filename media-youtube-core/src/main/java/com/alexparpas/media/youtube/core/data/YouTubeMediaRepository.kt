@@ -1,5 +1,8 @@
-package com.alexparpas.media.youtube.core
+package com.alexparpas.media.youtube.core.data
 
+import com.alexparpas.media.youtube.core.api.YouTubeMediaService
+import com.alexparpas.media.youtube.core.model.VideoSection
+import com.alexparpas.media.youtube.core.util.NotCachedException
 import io.reactivex.Single
 
 class YouTubeMediaRepository(
@@ -16,21 +19,25 @@ class YouTubeMediaRepository(
                     }
 
     fun getVideos(sections: List<VideoSection>, videoIds: List<String>): Single<List<MediaItem>> {
-        return getCachedVideos(videoIds).doOnError {
+        return getVideos(videoIds).map {
+            videoMapper.map(sections, it)
+        }
+    }
+
+    fun getVideos(videoIds: List<String>): Single<List<VideoItem>> {
+        return getCachedVideos(videoIds).onErrorResumeNext {
             if (it is NotCachedException) {
                 getVideosRemote(videoIds)
             } else {
                 Single.error(it)
             }
-        }.map {
-            videoMapper.map(sections, it)
         }
     }
 
-    private fun getCachedVideos(videoIds: List<String>): Single<List<VideoBinding>> =
-            Single.just(localStorage.getVideos(videoIds))
+    private fun getCachedVideos(videoIds: List<String>): Single<List<VideoItem>> =
+            localStorage.getVideos(videoIds)
 
-    private fun getVideosRemote(videoIds: List<String>): Single<List<VideoBinding>> {
+    private fun getVideosRemote(videoIds: List<String>): Single<List<VideoItem>> {
         return service.getVideos(
                 apiKey = apiKey,
                 part = "snippet,contentDetails,statistics",

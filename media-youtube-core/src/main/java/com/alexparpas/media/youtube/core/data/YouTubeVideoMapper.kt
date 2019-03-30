@@ -1,15 +1,17 @@
-package com.alexparpas.media.youtube.core
+package com.alexparpas.media.youtube.core.data
 
+import com.alexparpas.media.youtube.core.model.ApiVideoResponse
+import com.alexparpas.media.youtube.core.model.VideoSection
 import java.text.SimpleDateFormat
 import java.util.*
 
 class YouTubeVideoMapper internal constructor() {
 
-    fun map(videoResponse: VideoResponse): List<VideoBinding> {
+    fun map(videoResponse: ApiVideoResponse): List<VideoItem> {
         return videoResponse.items.map { item ->
             with(item) {
                 SimpleDateFormat("HH:mm:ssZ", Locale.UK).format(Date())
-                VideoBinding(
+                VideoItem(
                         id = id,
                         title = snippet.title,
                         channelTitle = snippet.channelTitle,
@@ -24,10 +26,10 @@ class YouTubeVideoMapper internal constructor() {
         }
     }
 
-    fun map(sections: List<VideoSection>, videos: List<VideoBinding>): List<MediaItem> =
+    fun map(sections: List<VideoSection>, videos: List<VideoItem>): List<MediaItem> =
             sections.map { map(it, videos) }.flatten()
 
-    private fun map(it: VideoSection, videos: List<VideoBinding>): MutableList<MediaItem> {
+    private fun map(it: VideoSection, videos: List<VideoItem>): MutableList<MediaItem> {
         val items = mutableListOf<MediaItem>()
 
         with(it) {

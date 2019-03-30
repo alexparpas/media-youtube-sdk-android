@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alexparpas.media.youtube.R
-import com.alexparpas.media.youtube.core.CategoryItem
-import com.alexparpas.media.youtube.core.MediaItem
-import com.alexparpas.media.youtube.core.VideoBinding
-import com.alexparpas.media.youtube.core.VideosItem
+import com.alexparpas.media.youtube.core.data.CategoryItem
+import com.alexparpas.media.youtube.core.data.MediaItem
+import com.alexparpas.media.youtube.core.data.VideoItem
+import com.alexparpas.media.youtube.core.data.VideosItem
 import kotlinx.android.synthetic.main.myt_layout_category_rv_item.view.*
 import kotlinx.android.synthetic.main.myt_layout_videos_rv_item.view.*
 
@@ -64,7 +64,7 @@ class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 }
 
 class VideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(videos: List<VideoBinding>, callback: YouTubeMediaVideosAdapter.Callback) {
+    fun bind(videos: List<VideoItem>, callback: YouTubeMediaVideosAdapter.Callback) {
         itemView.recycler_view?.apply {
             adapter = YouTubeMediaVideosAdapter(callback).apply { this.videos = videos }
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)

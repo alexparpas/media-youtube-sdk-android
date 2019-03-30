@@ -1,6 +1,10 @@
 package com.alexparpas.media.youtube.core
 
 import android.app.Application
+import com.alexparpas.media.youtube.core.api.YouTubeMediaService
+import com.alexparpas.media.youtube.core.data.LocalStorage
+import com.alexparpas.media.youtube.core.data.YouTubeMediaRepository
+import com.alexparpas.media.youtube.core.data.YouTubeVideoMapper
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -13,7 +17,8 @@ object MediaYouTube {
         YouTubeMediaRepository(
                 apiKey,
                 LocalStorage,
-                Injection.getYouTubeService()
+                Injection.getYouTubeService(),
+                YouTubeVideoMapper()
         )
     }
 
