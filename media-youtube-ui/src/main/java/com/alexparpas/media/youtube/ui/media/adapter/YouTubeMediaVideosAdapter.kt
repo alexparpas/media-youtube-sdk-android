@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alexparpas.media.youtube.R
-import com.alexparpas.media.youtube.core.data.CategoryItem
-import com.alexparpas.media.youtube.core.data.VideoItem
+import com.alexparpas.media.youtube.core.model.CategoryItem
+import com.alexparpas.media.youtube.core.model.VideoItem
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.myt_layout_video_rv_item.view.*
 

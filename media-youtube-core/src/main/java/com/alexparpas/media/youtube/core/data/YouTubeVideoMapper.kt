@@ -1,7 +1,6 @@
 package com.alexparpas.media.youtube.core.data
 
-import com.alexparpas.media.youtube.core.model.ApiVideoResponse
-import com.alexparpas.media.youtube.core.model.VideoSection
+import com.alexparpas.media.youtube.core.model.*
 import java.text.SimpleDateFormat
 import java.util.*
 

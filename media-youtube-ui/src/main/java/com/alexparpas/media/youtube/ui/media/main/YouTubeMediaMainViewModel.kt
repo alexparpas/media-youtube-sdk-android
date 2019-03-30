@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.alexparpas.media.youtube.core.ErrorState
-import com.alexparpas.media.youtube.core.LoadingState
-import com.alexparpas.media.youtube.core.NormalState
-import com.alexparpas.media.youtube.core.ViewState
-import com.alexparpas.media.youtube.core.data.MediaItem
+import com.alexparpas.media.youtube.core.model.ErrorState
+import com.alexparpas.media.youtube.core.model.LoadingState
+import com.alexparpas.media.youtube.core.model.NormalState
+import com.alexparpas.media.youtube.core.model.ViewState
+import com.alexparpas.media.youtube.core.model.MediaItem
 import com.alexparpas.media.youtube.core.data.YouTubeMediaRepository
 import com.alexparpas.media.youtube.core.model.VideoSection
 import io.reactivex.Scheduler

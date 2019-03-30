@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.alexparpas.media.youtube.core.data.VideoItem
+import com.alexparpas.media.youtube.core.model.VideoItem
 import com.alexparpas.media.youtube.core.data.YouTubeMediaRepository
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable

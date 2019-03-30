@@ -1,4 +1,4 @@
-package com.alexparpas.media.youtube.core
+package com.alexparpas.media.youtube.core.model
 
 sealed class ViewState
 object LoadingState : ViewState()

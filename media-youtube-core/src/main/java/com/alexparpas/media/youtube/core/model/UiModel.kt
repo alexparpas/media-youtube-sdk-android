@@ -1,4 +1,4 @@
-package com.alexparpas.media.youtube.core.data
+package com.alexparpas.media.youtube.core.model
 
 sealed class MediaItem
 

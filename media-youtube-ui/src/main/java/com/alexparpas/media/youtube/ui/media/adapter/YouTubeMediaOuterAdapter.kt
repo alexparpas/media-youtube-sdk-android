@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alexparpas.media.youtube.R
-import com.alexparpas.media.youtube.core.data.CategoryItem
-import com.alexparpas.media.youtube.core.data.MediaItem
-import com.alexparpas.media.youtube.core.data.VideoItem
-import com.alexparpas.media.youtube.core.data.VideosItem
+import com.alexparpas.media.youtube.core.model.CategoryItem
+import com.alexparpas.media.youtube.core.model.MediaItem
+import com.alexparpas.media.youtube.core.model.VideoItem
+import com.alexparpas.media.youtube.core.model.VideosItem
 import kotlinx.android.synthetic.main.myt_layout_category_rv_item.view.*
 import kotlinx.android.synthetic.main.myt_layout_videos_rv_item.view.*
 

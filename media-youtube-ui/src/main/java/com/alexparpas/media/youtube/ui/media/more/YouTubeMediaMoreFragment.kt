@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.alexparpas.media.youtube.R
-import com.alexparpas.media.youtube.core.data.CategoryItem
+import com.alexparpas.media.youtube.core.model.CategoryItem
 import com.alexparpas.media.youtube.ui.MediaYouTubeUi
 import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaVideosAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment

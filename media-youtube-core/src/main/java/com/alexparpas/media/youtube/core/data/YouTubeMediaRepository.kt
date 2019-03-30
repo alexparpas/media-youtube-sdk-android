@@ -1,6 +1,8 @@
 package com.alexparpas.media.youtube.core.data
 
 import com.alexparpas.media.youtube.core.api.YouTubeMediaService
+import com.alexparpas.media.youtube.core.model.MediaItem
+import com.alexparpas.media.youtube.core.model.VideoItem
 import com.alexparpas.media.youtube.core.model.VideoSection
 import com.alexparpas.media.youtube.core.util.NotCachedException
 import io.reactivex.Single
