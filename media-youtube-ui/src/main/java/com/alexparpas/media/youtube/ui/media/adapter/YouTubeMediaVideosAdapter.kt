@@ -38,7 +38,7 @@ class YouTubeMediaVideosAdapter(private val callback: Callback) : RecyclerView.A
 class YoutubeMediaVideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(item: VideoItem, callback: YouTubeMediaVideosAdapter.Callback) {
         if (item.thumbnailUrl.isNotBlank()) {
-            Picasso.get().load(item.thumbnailUrl).into(itemView.thumbnail_iv)
+            Picasso.with(itemView.context).load(item.thumbnailUrl).into(itemView.thumbnail_iv)
         }
         itemView.video_title_tv.text = item.title
         itemView.channel_name_tv.text = item.channelTitle
