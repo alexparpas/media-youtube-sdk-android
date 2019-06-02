@@ -14,6 +14,11 @@ class YouTubeMediaRepository internal constructor(
         private val videoMapper: YouTubeVideoMapper
 ) {
 
+    fun sortByOrder(sections: List<VideoSection>): Single<List<VideoSection>> =
+            Single.just(sections).map {
+                sections.sortedBy { it.order }
+            }
+
     fun getVideoIds(sections: List<VideoSection>): Single<List<String>> =
             Single.just(sections)
                     .map {
