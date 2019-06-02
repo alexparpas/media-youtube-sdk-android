@@ -1,22 +1,21 @@
 package com.alexparpas.media.youtube.core.data
 
 import com.alexparpas.media.youtube.core.model.*
-import java.text.SimpleDateFormat
-import java.util.*
+import java.text.DecimalFormat
 
 class YouTubeVideoMapper internal constructor() {
 
     fun map(videoResponse: ApiVideoResponse): List<VideoItem> {
         return videoResponse.items.map { item ->
             with(item) {
-                SimpleDateFormat("HH:mm:ssZ", Locale.UK).format(Date())
+                val viewCountFormatted = map(statistics.viewCount.toDoubleOrNull())
                 VideoItem(
                         id = id,
                         title = snippet.title,
                         channelTitle = snippet.channelTitle,
                         thumbnailUrl = snippet.thumbnails.medium.url,
                         likeCount = statistics.likeCount,
-                        viewCount = "${statistics.viewCount} views",
+                        viewCount = viewCountFormatted,
                         dislikeCount = statistics.dislikeCount,
                         commentCount = statistics.commentCount,
                         duration = contentDetails.duration
@@ -43,5 +42,18 @@ class YouTubeVideoMapper internal constructor() {
             }
         }
         return items
+    }
+
+
+    fun map(viewCount: Double?): String {
+        return if (viewCount != null) {
+            if (viewCount < 1000) return "${viewCount.toInt()} views"
+            val exp = (Math.log(viewCount) / Math.log(1000.0)).toInt()
+            val format = DecimalFormat("0.#")
+            val value = format.format(viewCount / Math.pow(1000.0, exp.toDouble()))
+            return String.format("%s%c", value, "kMBTPE"[exp - 1]) + " views"
+        } else {
+            ""
+        }
     }
 }
