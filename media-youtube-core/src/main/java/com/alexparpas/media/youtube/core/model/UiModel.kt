@@ -4,9 +4,11 @@ sealed class MediaItem
 
 class CategoryItem(
         val title: String,
-        val description: String,
+        val description: String?,
         val videoIds: List<String>
-) : MediaItem()
+) : MediaItem() {
+    val shouldShowDescription: Boolean get() = description != null
+}
 
 class VideosItem(val videos: List<VideoItem>) : MediaItem()
 
