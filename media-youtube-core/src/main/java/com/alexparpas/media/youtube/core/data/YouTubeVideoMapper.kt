@@ -32,6 +32,7 @@ class YouTubeVideoMapper internal constructor() {
         val items = mutableListOf<MediaItem>()
 
         with(it) {
+            val videoIds = this.videoIds ?: listOf()
             items.add(CategoryItem(title, description, videoIds))
 
             videoIds.map { id ->

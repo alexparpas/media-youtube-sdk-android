@@ -22,7 +22,9 @@ class YouTubeMediaRepository internal constructor(
     fun getVideoIds(sections: List<VideoSection>): Single<List<String>> =
             Single.just(sections)
                     .map {
-                        it.map { section -> section.videoIds }.flatten()
+                        it.map { section ->
+                            section.videoIds ?: listOf()
+                        }.flatten()
                     }
 
     fun getVideos(sections: List<VideoSection>, videoIds: List<String>): Single<List<MediaItem>> {

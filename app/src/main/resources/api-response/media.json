@@ -1,25 +1,21 @@
 [ {
   "description" : "A video series from K&M, covering every aspect of the game.",
   "order" : 10,
-  "title" : "From Kasual to Kompetitive",
-  "videoIds" : [ "uibngKGhgxo", "WZkGt8GlCXE", "bU-ZnnKJclI" ]
+  "title" : "From Kasual to Kompetitive"
 },
   {
     "description" : "Highlights from the biggest MK11 tournament so far.",
     "order" : 0,
-    "title" : "Combo Breaker",
-    "videoIds" : [ "CAM4SGFu7M8", "F2zT0hehT5E", "9eFyJTmhPhU", "QYqrVTN5_i8", "FtH069L56FM", "dltVKlJSzR0", "kgAPQ4jy4qM", "us_VtcjJDB4", "5COB-HNq1DM", "pHk2Q8Lydh4", "5Q6TEobBNWE", "KTCzxLe_xhA", "rlx6-hYXVRo", "Qt72iZoarAU", "DZ613hjwfCM", "pFFHYZ58j1M", "-lw-jG3P-g8", "ECgKZCuSMOg", "-QIkvOmJ5ys", "O-T8ZziEmSU", "JvDq-Md2_rk"]
+    "title" : "Combo Breaker"
   },
   {
     "description" : null,
     "order" : 20,
-    "title" : "Fighter Reveals",
-    "videoIds" : [ "9_q6NQmTfcw" ]
+    "title" : "Fighter Reveals"
   },
   {
     "description" : "How would your favorite Kombatants fare in a fight to the death with the laws of physics?",
     "order" : 30,
-    "title" : "Science of Mortal Kombat",
-    "videoIds" : [ "cHsvK-C6TWE", "e897pygfID4"]
+    "title" : "Science of Mortal Kombat"
   }
 ]

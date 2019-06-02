@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class VideoSection(
         val title: String,
-        val description: String?,
-        val videoIds: List<String>,
+        val description: String? = null,
+        val videoIds: List<String>?,
         val order: Int = Integer.MAX_VALUE
 ) : Parcelable
