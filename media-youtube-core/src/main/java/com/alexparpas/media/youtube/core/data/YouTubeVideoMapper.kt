@@ -9,6 +9,7 @@ class YouTubeVideoMapper internal constructor() {
         return videoResponse.items.map { item ->
             with(item) {
                 val viewCountFormatted = map(statistics.viewCount.toDoubleOrNull())
+                val durationFormatted = map(contentDetails.duration)
                 VideoItem(
                         id = id,
                         title = snippet.title,
@@ -18,7 +19,7 @@ class YouTubeVideoMapper internal constructor() {
                         viewCount = viewCountFormatted,
                         dislikeCount = statistics.dislikeCount,
                         commentCount = statistics.commentCount,
-                        duration = contentDetails.duration
+                        duration = durationFormatted
                 )
             }
         }
@@ -54,6 +55,40 @@ class YouTubeVideoMapper internal constructor() {
             return String.format("%s%c", value, "kMBTPE"[exp - 1]) + " views"
         } else {
             ""
+        }
+    }
+
+    fun map(durationRaw: String): String {
+        val millis = getDurationMillis(durationRaw)
+        return getDurationFormatted(millis)
+    }
+
+    //Code from https://stackoverflow.com/questions/16812593/how-to-convert-youtube-api-v3-duration-in-java
+    //Not the most elegant solution, but works and is well tested, so leaving it for now.
+    private fun getDurationMillis(durationRaw: String): Long {
+        var time = durationRaw.substring(2)
+        var duration = 0L
+        val indexs = arrayOf(arrayOf("H", 3600), arrayOf("M", 60), arrayOf("S", 1))
+        for (i in indexs.indices) {
+            val index = time.indexOf(indexs[i][0] as String)
+            if (index != -1) {
+                val value = time.substring(0, index)
+                duration += (Integer.parseInt(value) * indexs[i][1] as Int * 1000).toLong()
+                time = time.substring(value.length + 1)
+            }
+        }
+        return duration
+    }
+
+    private fun getDurationFormatted(millis: Long): String {
+        val second = millis / 1000 % 60
+        val minute = millis / (1000 * 60) % 60
+        val hour = millis / (1000 * 60 * 60) % 24
+
+        return if (hour == 0L) {
+            String.format("%02d:%02d", minute, second)
+        } else {
+            String.format("%02d:%02d:%02d", hour, minute, second)
         }
     }
 }

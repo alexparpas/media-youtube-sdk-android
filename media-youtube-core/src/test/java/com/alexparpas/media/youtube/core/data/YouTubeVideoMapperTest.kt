@@ -59,4 +59,28 @@ class YouTubeVideoMapperTest {
         //Assert
         assertEquals("", countFormatted)
     }
+
+    @Test
+    fun `if duration is minutes, then show the appropriate formatted duration`() {
+        //Given
+        val durationRaw = "PT10M23S"
+
+        //Perform
+        val durationFormatted = youTubeVideoMapper.map(durationRaw)
+
+        //Assert
+        assertEquals("10:23", durationFormatted)
+    }
+
+    @Test
+    fun `if duration is hours, then show the appropriate formatted duration`() {
+        //Given
+        val durationRaw = "PT10H17M37S"
+
+        //Perform
+        val durationFormatted = youTubeVideoMapper.map(durationRaw)
+
+        //Assert
+        assertEquals("10:17:37", durationFormatted)
+    }
 }
