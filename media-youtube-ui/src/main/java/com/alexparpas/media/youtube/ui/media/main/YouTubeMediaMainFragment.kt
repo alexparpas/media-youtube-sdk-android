@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.alexparpas.media.youtube.R
 import com.alexparpas.media.youtube.core.model.*
 import com.alexparpas.media.youtube.ui.MediaYouTubeUi
@@ -35,7 +36,10 @@ internal class YouTubeMediaMainFragment : Fragment(), YouTubeMediaVideosAdapter.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = YouTubeMediaOuterAdapter(this)
+        val adapter = YouTubeMediaOuterAdapter(
+                callback = this,
+                viewPool = RecyclerView.RecycledViewPool()
+        )
         initRecyclerView(adapter)
 
         observeVideos(adapter)

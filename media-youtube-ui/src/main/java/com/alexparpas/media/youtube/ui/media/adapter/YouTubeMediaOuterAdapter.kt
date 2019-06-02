@@ -13,7 +13,10 @@ import com.alexparpas.media.youtube.core.model.VideosItem
 import kotlinx.android.synthetic.main.myt_layout_category_rv_item.view.*
 import kotlinx.android.synthetic.main.myt_layout_videos_rv_item.view.*
 
-internal class YouTubeMediaOuterAdapter(private val callback: YouTubeMediaVideosAdapter.Callback) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+internal class YouTubeMediaOuterAdapter(
+        private val callback: YouTubeMediaVideosAdapter.Callback,
+        private val viewPool: RecyclerView.RecycledViewPool
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var videos: List<MediaItem> = mutableListOf()
         set(value) {
             field = value
@@ -45,7 +48,7 @@ internal class YouTubeMediaOuterAdapter(private val callback: YouTubeMediaVideos
         if (holder.itemViewType == TYPE_CATEGORY) {
             (holder as CategoryViewHolder).bind((videos[position] as CategoryItem), callback)
         } else {
-            (holder as VideosViewHolder).bind((videos[position] as VideosItem).videos, callback)
+            (holder as VideosViewHolder).bind((videos[position] as VideosItem).videos, callback, viewPool)
         }
     }
 
@@ -67,8 +70,9 @@ internal class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(item
 }
 
 internal class VideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(videos: List<VideoItem>, callback: YouTubeMediaVideosAdapter.Callback) {
+    fun bind(videos: List<VideoItem>, callback: YouTubeMediaVideosAdapter.Callback, viewPool: RecyclerView.RecycledViewPool) {
         itemView.recycler_view?.apply {
+            setRecycledViewPool(viewPool)
             adapter = YouTubeMediaVideosAdapter(callback).apply { this.videos = videos }
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             setHasFixedSize(true)
