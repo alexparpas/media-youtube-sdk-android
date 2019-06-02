@@ -10,7 +10,7 @@ import com.alexparpas.media.youtube.core.model.VideoItem
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.myt_layout_video_rv_item.view.*
 
-class YouTubeMediaVideosAdapter(private val callback: Callback) : RecyclerView.Adapter<YoutubeMediaVideosViewHolder>() {
+internal class YouTubeMediaVideosAdapter(private val callback: Callback) : RecyclerView.Adapter<YoutubeMediaVideosViewHolder>() {
     var videos: List<VideoItem> = mutableListOf()
         set(value) {
             field = value
@@ -35,7 +35,7 @@ class YouTubeMediaVideosAdapter(private val callback: Callback) : RecyclerView.A
     }
 }
 
-class YoutubeMediaVideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+internal class YoutubeMediaVideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(item: VideoItem, callback: YouTubeMediaVideosAdapter.Callback) {
         if (item.thumbnailUrl.isNotBlank()) {
             Picasso.with(itemView.context).load(item.thumbnailUrl).into(itemView.thumbnail_iv)

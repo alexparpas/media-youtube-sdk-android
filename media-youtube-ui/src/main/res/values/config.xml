@@ -6,6 +6,7 @@
     <color name="myt_default_text_color">#000000</color>
     <string name="myt_category_more">See All</string>
     <string name="myt_error_generic">Could not load videos</string>
+    <string name="myt_empty_generic">No videos</string>
 
     <style name="BaseYtThumbnailIvStyle">
         <item name="android:layout_width">180dp</item>

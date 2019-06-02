@@ -12,7 +12,7 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import timber.log.Timber
 
-class YouTubeMediaMoreViewModel(
+internal class YouTubeMediaMoreViewModel(
         private val categoryName: String,
         private val videoIds: List<String>,
         private val ioScheduler: Scheduler,

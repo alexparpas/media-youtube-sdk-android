@@ -2,19 +2,19 @@ package com.alexparpas.media.youtube.core.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ApiVideoResponse(
+internal data class ApiVideoResponse(
         val id: String,
         val items: List<ApiVideoItem>
 )
 
-data class ApiVideoItem(
+internal data class ApiVideoItem(
         val id: String,
         val snippet: ApiSnippet,
         val statistics: ApiStatistics,
         val contentDetails: ApiContentDetails
 )
 
-data class ApiSnippet(
+internal data class ApiSnippet(
         val publishedAt: String,
         val channelId: String,
         val title: String,
@@ -27,12 +27,12 @@ data class ApiSnippet(
         val localized: ApiLocalized
 )
 
-data class ApiLocalized(
+internal data class ApiLocalized(
         val title: String,
         val description: String
 )
 
-data class ApiThumbnails(
+internal data class ApiThumbnails(
         val default: ApiDefault,
         val medium: ApiDefault,
         val high: ApiDefault,
@@ -40,13 +40,13 @@ data class ApiThumbnails(
         @SerializedName("maxres") val maxRes: ApiDefault
 )
 
-data class ApiDefault(
+internal data class ApiDefault(
         val url: String,
         val width: Long,
         val height: Long
 )
 
-data class ApiStatistics(
+internal data class ApiStatistics(
         val viewCount: String,
         val likeCount: String,
         val dislikeCount: String,
@@ -54,7 +54,7 @@ data class ApiStatistics(
         val commentCount: String
 )
 
-data class ApiContentDetails(
+internal data class ApiContentDetails(
         val duration: String,
         val dimension: String,
         val definition: String,
@@ -64,6 +64,6 @@ data class ApiContentDetails(
         val projection: String
 )
 
-data class ApiContentRating(
+internal data class ApiContentRating(
         val ytRating: String
 )

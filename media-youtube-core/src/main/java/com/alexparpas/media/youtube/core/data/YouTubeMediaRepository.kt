@@ -7,7 +7,7 @@ import com.alexparpas.media.youtube.core.model.VideoSection
 import com.alexparpas.media.youtube.core.util.NotCachedException
 import io.reactivex.Single
 
-class YouTubeMediaRepository(
+class YouTubeMediaRepository internal constructor(
         private val apiKey: String,
         private val localStorage: LocalStorage,
         private val service: YouTubeMediaService,

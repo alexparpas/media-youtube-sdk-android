@@ -18,14 +18,14 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().replace(
                 R.id.frag_ct,
-                MediaYouTubeUi.getMainMediaFragment(getSections()!!),
+                MediaYouTubeUi.getMainMediaFragment(getSections()),
                 "frag"
         ).commit()
     }
 
-    private fun getSections() =
+    private fun getSections(): ArrayList<VideoSection> =
             JsonUtils.fromJson<ArrayList<VideoSection>>(
                     fileName = "media.json",
                     type = object : TypeToken<ArrayList<VideoSection>>() {}.type
-            )
+            )!!
 }

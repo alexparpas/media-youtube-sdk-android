@@ -4,20 +4,20 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.alexparpas.media.youtube.core.model.ErrorState
-import com.alexparpas.media.youtube.core.model.LoadingState
-import com.alexparpas.media.youtube.core.model.NormalState
-import com.alexparpas.media.youtube.core.model.ViewState
-import com.alexparpas.media.youtube.core.model.MediaItem
 import com.alexparpas.media.youtube.core.data.YouTubeMediaRepository
-import com.alexparpas.media.youtube.core.model.VideoSection
+import com.alexparpas.media.youtube.core.model.*
+import com.alexparpas.media.youtube.ui.common.EmptyState
+import com.alexparpas.media.youtube.ui.common.ErrorState
+import com.alexparpas.media.youtube.ui.common.LoadingState
+import com.alexparpas.media.youtube.ui.common.NormalState
+import com.alexparpas.media.youtube.ui.common.ViewState
 import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 import timber.log.Timber
 
-class YouTubeMediaMainViewModel(
+internal class YouTubeMediaMainViewModel(
         sections: List<VideoSection>,
         private val ioScheduler: Scheduler,
         private val uiScheduler: Scheduler,
@@ -33,7 +33,7 @@ class YouTubeMediaMainViewModel(
 
     init {
         getVideos(sections)
-    }
+}
 
     private fun getVideos(sections: List<VideoSection>) {
         repository.getVideoIds(sections)
@@ -42,7 +42,9 @@ class YouTubeMediaMainViewModel(
                 }
                 .doOnSubscribe { _viewState.postValue(LoadingState) }
                 .doOnError { _viewState.postValue(ErrorState(it)) }
-                .doOnSuccess { _viewState.postValue(NormalState) }
+                .doOnSuccess {
+                    if (it.isEmpty()) _viewState.postValue(EmptyState) else _viewState.postValue(NormalState)
+                }
                 .subscribeOn(ioScheduler)
                 .observeOn(uiScheduler)
                 .subscribeBy(

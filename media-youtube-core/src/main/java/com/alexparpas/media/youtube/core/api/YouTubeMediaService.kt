@@ -5,7 +5,7 @@ import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface YouTubeMediaService {
+internal interface YouTubeMediaService {
     @GET("v3/videos")
     fun getVideos(
             @Query("key") apiKey: String,

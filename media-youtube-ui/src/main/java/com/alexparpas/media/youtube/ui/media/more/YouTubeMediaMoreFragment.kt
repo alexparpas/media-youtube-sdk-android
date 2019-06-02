@@ -14,7 +14,7 @@ import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaVideosAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.myt_fragment_youtube_more_media.*
 
-class YouTubeMediaMoreFragment : BottomSheetDialogFragment(), YouTubeMediaVideosAdapter.Callback {
+internal class YouTubeMediaMoreFragment : BottomSheetDialogFragment(), YouTubeMediaVideosAdapter.Callback {
     private lateinit var viewModel: YouTubeMediaMoreViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,10 +33,6 @@ class YouTubeMediaMoreFragment : BottomSheetDialogFragment(), YouTubeMediaVideos
         initRecyclerView(adapter)
         observeCategoryName()
         observeVideos(adapter)
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
     }
 
     private fun initViewModel() {

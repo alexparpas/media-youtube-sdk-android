@@ -13,7 +13,7 @@ import com.alexparpas.media.youtube.core.model.VideosItem
 import kotlinx.android.synthetic.main.myt_layout_category_rv_item.view.*
 import kotlinx.android.synthetic.main.myt_layout_videos_rv_item.view.*
 
-class YouTubeMediaOuterAdapter(private val callback: YouTubeMediaVideosAdapter.Callback) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+internal class YouTubeMediaOuterAdapter(private val callback: YouTubeMediaVideosAdapter.Callback) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var videos: List<MediaItem> = mutableListOf()
         set(value) {
             field = value
@@ -55,7 +55,7 @@ class YouTubeMediaOuterAdapter(private val callback: YouTubeMediaVideosAdapter.C
     }
 }
 
-class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+internal class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(categoryItem: CategoryItem, callback: YouTubeMediaVideosAdapter.Callback) {
         itemView.setOnClickListener { callback.onCategoryClicked(categoryItem) }
         itemView.category_tv.text = categoryItem.title
@@ -66,7 +66,7 @@ class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 }
 
-class VideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+internal class VideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(videos: List<VideoItem>, callback: YouTubeMediaVideosAdapter.Callback) {
         itemView.recycler_view?.apply {
             adapter = YouTubeMediaVideosAdapter(callback).apply { this.videos = videos }

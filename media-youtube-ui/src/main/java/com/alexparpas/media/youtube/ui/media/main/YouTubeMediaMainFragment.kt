@@ -9,18 +9,18 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alexparpas.media.youtube.R
-import com.alexparpas.media.youtube.core.model.ErrorState
-import com.alexparpas.media.youtube.core.model.LoadingState
-import com.alexparpas.media.youtube.core.model.NormalState
-import com.alexparpas.media.youtube.core.model.CategoryItem
-import com.alexparpas.media.youtube.core.model.VideoSection
+import com.alexparpas.media.youtube.core.model.*
 import com.alexparpas.media.youtube.ui.MediaYouTubeUi
+import com.alexparpas.media.youtube.ui.common.EmptyState
+import com.alexparpas.media.youtube.ui.common.ErrorState
+import com.alexparpas.media.youtube.ui.common.LoadingState
+import com.alexparpas.media.youtube.ui.common.NormalState
 import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaOuterAdapter
 import com.alexparpas.media.youtube.ui.media.adapter.YouTubeMediaVideosAdapter
 import com.alexparpas.media.youtube.ui.media.more.YouTubeMediaMoreFragment
 import kotlinx.android.synthetic.main.myt_fragment_youtube_media.*
 
-class YouTubeMediaMainFragment : Fragment(), YouTubeMediaVideosAdapter.Callback {
+internal class YouTubeMediaMainFragment : Fragment(), YouTubeMediaVideosAdapter.Callback {
 
     private lateinit var viewModel: YouTubeMediaMainViewModel
 
@@ -40,10 +40,6 @@ class YouTubeMediaMainFragment : Fragment(), YouTubeMediaVideosAdapter.Callback 
 
         observeVideos(adapter)
         observeViewState()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
     }
 
     private fun initViewModel() {
@@ -75,6 +71,7 @@ class YouTubeMediaMainFragment : Fragment(), YouTubeMediaVideosAdapter.Callback 
             when (it) {
                 LoadingState -> setLoadingState()
                 NormalState -> setNormalState()
+                EmptyState -> setEmptyState()
                 is ErrorState -> setErrorState()
             }
         })
@@ -83,18 +80,28 @@ class YouTubeMediaMainFragment : Fragment(), YouTubeMediaVideosAdapter.Callback 
     private fun setErrorState() {
         recycler_view.visibility = View.GONE
         loading_pb.visibility = View.GONE
+        empty_tv.visibility = View.GONE
         error_tv.visibility = View.VISIBLE
     }
 
     private fun setNormalState() {
         recycler_view.visibility = View.VISIBLE
         loading_pb.visibility = View.GONE
+        empty_tv.visibility = View.GONE
+        error_tv.visibility = View.GONE
+    }
+
+    private fun setEmptyState(){
+        recycler_view.visibility = View.GONE
+        loading_pb.visibility = View.GONE
+        empty_tv.visibility = View.VISIBLE
         error_tv.visibility = View.GONE
     }
 
     private fun setLoadingState() {
         recycler_view.visibility = View.GONE
         loading_pb.visibility = View.VISIBLE
+        empty_tv.visibility = View.GONE
         error_tv.visibility = View.GONE
     }
 

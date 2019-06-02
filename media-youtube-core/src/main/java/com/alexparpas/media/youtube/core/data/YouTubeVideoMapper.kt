@@ -5,7 +5,7 @@ import java.text.DecimalFormat
 
 class YouTubeVideoMapper internal constructor() {
 
-    fun map(videoResponse: ApiVideoResponse): List<VideoItem> {
+    internal fun map(videoResponse: ApiVideoResponse): List<VideoItem> {
         return videoResponse.items.map { item ->
             with(item) {
                 val viewCountFormatted = map(statistics.viewCount.toDoubleOrNull())
@@ -25,7 +25,7 @@ class YouTubeVideoMapper internal constructor() {
         }
     }
 
-    fun map(sections: List<VideoSection>, videos: List<VideoItem>): List<MediaItem> =
+    internal fun map(sections: List<VideoSection>, videos: List<VideoItem>): List<MediaItem> =
             sections.map { map(it, videos) }.flatten()
 
     private fun map(it: VideoSection, videos: List<VideoItem>): MutableList<MediaItem> {
