@@ -76,6 +76,7 @@ internal class VideosViewHolder(itemView: View) : RecyclerView.ViewHolder(itemVi
             adapter = YouTubeMediaVideosAdapter(callback).apply { this.videos = videos }
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             setHasFixedSize(true)
+            isNestedScrollingEnabled = false
         }
     }
 }
