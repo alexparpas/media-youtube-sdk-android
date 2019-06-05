@@ -19,4 +19,4 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keepclassmembers class com.alexparpas.media.youtube.model.** {*;}
+-keep class com.alexparpas.media.youtube.core.model.** { *; }
