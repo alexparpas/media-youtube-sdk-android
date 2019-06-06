@@ -2,6 +2,7 @@
 <resources>
     <public name="myt_main_background" type="drawable" />
     <public name="myt_more_background" type="drawable" />
+    <public name="myt_video_placeholder" type="drawable" />
     <public name="myt_default_text_colour" type="color" />
     <public name="myt_category_more" type="string" />
     <public name="myt_error_generic" type="string" />

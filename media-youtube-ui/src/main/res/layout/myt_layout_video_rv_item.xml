@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
     android:layout_marginEnd="4dp"
+    android:layout_marginBottom="16dp"
+    android:background="?attr/selectableItemBackground"
     android:orientation="vertical">
 
     <ImageView
@@ -21,9 +22,9 @@
         style="@style/MytDurationTvStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="0:69"
         app:layout_constraintBottom_toBottomOf="@id/thumbnail_iv"
-        app:layout_constraintEnd_toEndOf="@id/thumbnail_iv" />
+        app:layout_constraintEnd_toEndOf="@id/thumbnail_iv"
+        tools:text="0:69" />
 
     <TextView
         android:id="@+id/video_title_tv"
