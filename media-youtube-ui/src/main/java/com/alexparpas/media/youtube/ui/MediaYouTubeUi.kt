@@ -9,10 +9,13 @@ import com.alexparpas.media.youtube.ui.media.main.YouTubeMediaMainFragment
 import com.alexparpas.media.youtube.ui.media.main.YouTubeMediaViewModelFactory
 import com.alexparpas.media.youtube.ui.media.more.YouTubeMoreViewModelFactory
 import com.alexparpas.media.youtube.ui.video.VideoActivity
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import io.reactivex.subjects.PublishSubject
 
 object MediaYouTubeUi {
+    private val videoPlayedSubject: PublishSubject<String> = PublishSubject.create()
     internal const val ARG_SECTIONS = "ARG_SECTIONS"
     internal const val ARG_VIDEO_ID = "ARG_VIDEO_ID"
 
@@ -25,7 +28,10 @@ object MediaYouTubeUi {
                     putExtra(ARG_VIDEO_ID, videoId)
                 }
         )
+        videoPlayedSubject.onNext(videoId)
     }
+
+    fun onVideoPlayed(): Observable<String> = videoPlayedSubject
 
     internal object Injection {
         fun provideMediaViewModelFactory(sections: List<VideoSection>) =
