@@ -2,7 +2,9 @@
 <resources>
     <public name="myt_main_background" type="drawable" />
     <public name="myt_more_background" type="drawable" />
+    <public name="myt_video_background" type="drawable" />
     <public name="myt_video_placeholder" type="drawable" />
+    <public name="myt_videos_card_background" type="drawable" />
     <public name="myt_default_text_colour" type="color" />
     <public name="myt_category_more" type="string" />
     <public name="myt_error_generic" type="string" />
@@ -15,5 +17,7 @@
     <public name="MytChannelTvStyle" type="style" />
     <public name="MytViewsTvStyle" type="style" />
     <public name="MytSeeAllTvStyle" type="style" />
+    <public name="MytVideosCardViewStyle" type="style" />
+
 
 </resources>
