@@ -3,6 +3,7 @@
 
     <drawable name="myt_main_background">#FFFFFF</drawable>
     <drawable name="myt_more_background">#FFFFFF</drawable>
+    <drawable name="myt_video_background">#000000</drawable>
     <color name="myt_default_text_color">#000000</color>
     <string name="myt_category_more">See All</string>
     <string name="myt_error_generic">Could not load videos</string>
