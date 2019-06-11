@@ -1,9 +1,7 @@
 package com.alexparpas.media.youtube.ui.video
 
 import android.content.pm.ActivityInfo
-import android.content.res.Configuration
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.alexparpas.media.youtube.R
 import com.alexparpas.media.youtube.ui.MediaYouTubeUi
@@ -22,16 +20,6 @@ internal class VideoActivity : AppCompatActivity() {
 
         val videoId = intent.getStringExtra(MediaYouTubeUi.ARG_VIDEO_ID)
         initPlayer(videoId)
-    }
-
-    override fun onConfigurationChanged(newConfiguration: Configuration) {
-        super.onConfigurationChanged(newConfiguration)
-        youtube_player_view.getPlayerUiController().getMenu()?.dismiss()
-    }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) hideSystemUI()
     }
 
     override fun onBackPressed() {
@@ -75,32 +63,11 @@ internal class VideoActivity : AppCompatActivity() {
 
     private fun enterFullScreen() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-        hideSystemUI()
+        youtube_player_view.enterFullScreen()
     }
 
     private fun exitFullScreen() {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-        showSystemUI()
-    }
-
-    private fun hideSystemUI() {
-        // Enables regular immersive mode.
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
-                // Set the content to appear under the system bars so that the
-                // content doesn't resize when the system bars hide and show.
-                or View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                // Hide the nav bar and status bar
-                or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_FULLSCREEN)
-    }
-
-    // Shows the system bars by removing all the flags
-    // except for the ones that make the content appear under the system bars.
-    private fun showSystemUI() {
-        window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN)
+        youtube_player_view.exitFullScreen()
     }
 }
