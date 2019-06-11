@@ -3,7 +3,6 @@
 
     <drawable name="myt_main_background">#FFFFFF</drawable>
     <drawable name="myt_more_background">#FFFFFF</drawable>
-    <drawable name="myt_video_background">#000000</drawable>
     <color name="myt_default_text_color">#000000</color>
     <string name="myt_category_more">See All</string>
     <string name="myt_error_generic">Could not load videos</string>
@@ -64,14 +63,6 @@
         <item name="android:text">@string/myt_category_more</item>
     </style>
 
-
-    <style name="BaseYtVideosCardViewStyle">
-        <item name="cardElevation">16dp</item>
-        <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:layout_marginStart">16dp</item>
-
-    </style>
-
     <style name="MytCategoryTitleTvStyle" parent="BaseYtCategoryTitleTvStyle" />
 
     <style name="MytCategoryDescriptionTvStyle" parent="BaseYtCategoryDescriptionTvStyle" />
@@ -87,6 +78,4 @@
     <style name="MytViewsTvStyle" parent="BaseYtViewsTvStyle" />
 
     <style name="MytSeeAllTvStyle" parent="BaseYtSeeAllTvStyle" />
-
-    <style name="MytVideosCardViewStyle" parent="BaseYtVideosCardViewStyle" />
 </resources>
