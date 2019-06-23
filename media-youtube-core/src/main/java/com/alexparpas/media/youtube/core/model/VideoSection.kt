@@ -8,5 +8,6 @@ data class VideoSection(
         val title: String,
         val description: String? = null,
         val videoIds: List<String>?,
-        val order: Int = Integer.MAX_VALUE
+        val order: Int = Integer.MAX_VALUE,
+        val isNew: Boolean = false
 ) : Parcelable

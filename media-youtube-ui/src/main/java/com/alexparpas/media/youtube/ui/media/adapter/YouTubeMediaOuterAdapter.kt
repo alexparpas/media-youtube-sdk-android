@@ -62,6 +62,7 @@ internal class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(item
     fun bind(categoryItem: CategoryItem, callback: YouTubeMediaVideosAdapter.Callback) {
         itemView.setOnClickListener { callback.onCategoryClicked(categoryItem) }
         itemView.category_tv.text = categoryItem.title
+        itemView.new_tag_iv.visibility = if (categoryItem.isNew) View.VISIBLE else View.GONE
         itemView.description_tv.apply {
             visibility = if (categoryItem.shouldShowDescription) View.VISIBLE else View.GONE
             text = categoryItem.description

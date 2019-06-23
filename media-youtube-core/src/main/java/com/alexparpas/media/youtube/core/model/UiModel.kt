@@ -5,7 +5,8 @@ sealed class MediaItem
 class CategoryItem(
         val title: String,
         val description: String?,
-        val videoIds: List<String>
+        val videoIds: List<String>,
+        val isNew: Boolean
 ) : MediaItem() {
     val shouldShowDescription: Boolean get() = description != null
 }

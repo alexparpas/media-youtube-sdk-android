@@ -33,7 +33,7 @@ class YouTubeVideoMapper internal constructor() {
 
         with(it) {
             val videoIds = this.videoIds ?: listOf()
-            items.add(CategoryItem(title, description, videoIds))
+            items.add(CategoryItem(title, description, videoIds, isNew))
 
             videoIds.map { id ->
                 videos.first { video ->
