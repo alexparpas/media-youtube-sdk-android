@@ -37,6 +37,7 @@
                 android:id="@+id/new_tag_iv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/ic_fiber_new_black_24dp"
                 android:visibility="gone"
