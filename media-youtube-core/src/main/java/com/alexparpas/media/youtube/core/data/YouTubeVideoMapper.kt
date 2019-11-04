@@ -26,7 +26,9 @@ class YouTubeVideoMapper internal constructor() {
     }
 
     internal fun map(sections: List<VideoSection>, videos: List<VideoItem>): List<MediaItem> =
-            sections.map { map(it, videos) }.flatten()
+            sections.map {
+                map(it, videos)
+            }.flatten()
 
     private fun map(it: VideoSection, videos: List<VideoItem>): MutableList<MediaItem> {
         val items = mutableListOf<MediaItem>()
@@ -35,13 +37,9 @@ class YouTubeVideoMapper internal constructor() {
             val videoIds = this.videoIds ?: listOf()
             items.add(CategoryItem(title, description, videoIds, isNew))
 
-            videoIds.map { id ->
-                videos.first { video ->
-                    video.id == id
-                }
-            }.let {
-                items.add(VideosItem(it))
-            }
+            videoIds.map { id -> videos.firstOrNull { video -> video.id == id } }
+                    .filterNotNull()
+                    .let { items.add(VideosItem(it)) }
         }
         return items
     }

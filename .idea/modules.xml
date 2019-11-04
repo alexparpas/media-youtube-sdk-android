@@ -3,9 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/media-youtube-core/media-youtube-core.iml" filepath="$PROJECT_DIR$/media-youtube-core/media-youtube-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/media-youtube-core/media-youtube-core.iml" filepath="$PROJECT_DIR$/media-youtube-core/media-youtube-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/media-youtube-sdk-android.iml" filepath="$PROJECT_DIR$/.idea/media-youtube-sdk-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/media-youtube-sdk-android.iml" filepath="$PROJECT_DIR$/.idea/media-youtube-sdk-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/media-youtube-sdk-android.iml" filepath="$PROJECT_DIR$/media-youtube-sdk-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/media-youtube-ui/media-youtube-ui.iml" filepath="$PROJECT_DIR$/media-youtube-ui/media-youtube-ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/media-youtube-ui/media-youtube-ui.iml" filepath="$PROJECT_DIR$/media-youtube-ui/media-youtube-ui.iml" />
     </modules>
   </component>
